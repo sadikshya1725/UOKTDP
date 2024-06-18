@@ -257,7 +257,8 @@ hr.dob_line{
 /* For top Navbar */
 .topheader{
  
-  background: url('../img/topnav.png') center right / 75% no-repeat;
+  background: url('../img/topnav.png') center right / 105% no-repeat;
+  position: relative;
 
 }
 
