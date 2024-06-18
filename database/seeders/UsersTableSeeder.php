@@ -15,8 +15,8 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         User::create([
-            "name" => "National Art Museum Admin",
-            "email" => "museum.admin@gmail.com",
+            "name" => "Admin",
+            "email" => "admin@gmail.com",
             "password" => bcrypt("password@123") // $2a$12$e7J6Us0c5AY6e7ryeDoV.ORa34qMgT18w2YmVh8jLP9gaPLDEwu5.
 
         ]);
