@@ -257,10 +257,15 @@ hr.dob_line{
 /* For top Navbar */
 .topheader{
  
-  background: url('../img/topnav.png') center right / 105% no-repeat;
-  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  background-image: url('../img/topnav.png');
+  
+ 
 
 }
+
 
 .top_left{
     display: flex;
