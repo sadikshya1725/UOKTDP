@@ -149,12 +149,11 @@
 
                 </div>
 
-
-                <div class="col-md-4">
+                 <div class="col-md-4">
                     <iframe src="{{ $sitesetting->face_page }}" width="100%" height="600"
                         style="border:none; margin-left:5px;" scrolling="no" frameborder="0" allowfullscreen="true"
                         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                </div>
+                </div> 
             </div>
         </div>
     </section>

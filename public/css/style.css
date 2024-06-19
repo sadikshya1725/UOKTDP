@@ -194,7 +194,6 @@ hr.dob_line{
 
 }
 
-
 .en_ne{
   height:20px;
   width: 5px;
@@ -262,10 +261,9 @@ hr.dob_line{
   background-position: bottom;
   background-image: url('../img/topnav.png');
   
- 
+  
 
 }
-
 
 .top_left{
     display: flex;
@@ -292,6 +290,45 @@ hr.dob_line{
     display: inline-block;
     height: 120px;
     margin: 5px;
+}
+
+.language-switcher {
+  position: absolute; /* Ensure the switcher is positioned correctly */
+  top: 10px; /* Adjust to position the switcher at the top */
+  right: 10px; /* Adjust to position the switcher at the right */
+  z-index: 999; /* Bring the switcher to the front */
+  display: flex; /* Use flexbox for horizontal alignment */
+  margin-right: 10px;
+}
+
+.language-switcher .btn_en {
+  z-index: 1000; /* Ensure buttons are in front */
+  position: relative; /* Maintain context */
+  padding: 3px; /* Ensure button styling remains intact */
+  width: fit-content; /* Ensure buttons adjust to content width */
+  color: var(--white);
+  background: var(--first);
+  transition: 0.2s all;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block; /* Ensure buttons are inline-block for horizontal alignment */
+  margin: 0; /* Remove any default margins */
+  border-left: 1px solid var(--first); /* Create a seamless border between buttons */
+}
+
+.language-switcher .btn_en:first-child {
+  border-left: none; /* Remove left border for the first button */
+}
+
+.language-switcher .btn_en:hover {
+  color: var(--first);
+  background: var(--white);
+  font-weight: 700;
+}
+
+.language-switcher .btn_en.active {
+  color: var(--white);
+  background-color: var(--red);
 }
 
 .top_right{
@@ -1026,7 +1063,7 @@ background-color: var(--first)
   background-repeat: no-repeat;
   background-position: center center; */
 
-   /* position: relative; */
+  position: relative;
  /* box-shadow: rgba(33, 37, 109, 0.15); */
  font-family:'Mukta', sans-serif;
 

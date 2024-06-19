@@ -27,14 +27,15 @@
                         <span id="TIME_IN_NEPALI"></span>
 
                     </p>
-                    <img src="{{ asset('uploads/sitesetting/' . $sitesetting->flag_logo) }}" alt=""
-                        class="logo_img">
-                    <div class="en_ne">
-                        @foreach (config('app.languages') as $langLocale => $langName)
-                            <a href="{{ url()->current() }}?change_language={{ $langLocale }}" class="btn_en {{ app()->getLocale() === $langLocale ? 'active' : '' }}">
-                                {{ strtoupper($langLocale) }}
-                            </a>
-                        @endforeach
+                    <div class="container">
+                        <img src="{{ asset('uploads/sitesetting/' . $sitesetting->flag_logo) }}" alt="" class="logo_img">
+                        <div class="language-switcher">
+                            @foreach (config('app.languages') as $langLocale => $langName)
+                                <a href="{{ url()->current() }}?change_language={{ $langLocale }}" class="btn_en {{ app()->getLocale() === $langLocale ? 'active' : '' }}">
+                                    {{ strtoupper($langLocale) }}
+                                </a>
+                            @endforeach
+                        </div>
                     </div>
 
 
