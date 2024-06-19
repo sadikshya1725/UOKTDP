@@ -9,7 +9,7 @@
             
            
         @foreach ($teams as $team)
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card team_card mt-2 mb-2">
                     @if (isset($team->image))
                     <img src="{{ asset('uploads/team/' . $team->image) }}" class="card-img-top image">

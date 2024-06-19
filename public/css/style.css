@@ -251,6 +251,7 @@ hr.dob_line{
   color: var(--first);
   font-weight: 800;
   text-align: right;
+  white-space: nowrap;
 }
 
 /* For top Navbar */
@@ -279,8 +280,8 @@ hr.dob_line{
   font-weight: 18px;
 }
 .office_name{
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 770;
 }
 
 .top_mid{
@@ -1318,5 +1319,50 @@ background-color: var(--first)
     transition: 0.1s all;
     display: inline-block;
   }
+
+
+
+.inline-date-time {
+    display: inline-block; /* Keeps elements inline but allows block styling */
+    margin-right: 5px; /* Adjusts spacing between elements */
+}
+
+
+    .title-overlay-container {
+        position: relative;
+        display: inline-block;
+        width: 100%; /* Adjust as necessary */
+    }
+
+    .title-overlay-container input {
+        width: 100%; /* Ensure the input takes the full width */
+    }
+
+    .title-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        pointer-events: none;
+        opacity: 0; /* Start with hidden overlay */
+    }
+
+    .title-overlay-container:hover .title-overlay {
+        opacity: 1; /* Show overlay on hover */
+    }
+
+    .title-overlay h1 {
+        margin: 0;
+        padding: 10px; /* Adjust padding as needed */
+        z-index: 2;
+    }
+
   
   }

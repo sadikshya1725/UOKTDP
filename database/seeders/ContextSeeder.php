@@ -16,9 +16,9 @@ class ContextSeeder extends Seeder
     {
         //
         $contexts = array(
-            ['Notice'],
+            ['NOTICE BOARD'],
             ['Act And Regulation'],
-            ['Programs And Budget'],
+            ['BUDGET & PROGRAMS'],
         );
 
         foreach ($contexts as $context) {
