@@ -17,7 +17,7 @@ class ContextSeeder extends Seeder
         //
         $contexts = array(
             ['NOTICE BOARD'],
-            ['Act And Regulation'],
+            // ['Act And Regulation'],
             ['BUDGET & PROGRAMS'],
         );
 

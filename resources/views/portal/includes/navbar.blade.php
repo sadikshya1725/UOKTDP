@@ -97,16 +97,19 @@
                 </li>
                 @endforeach
 
-                <li class="nav-item dropdown {{ request()->is('publications', 'acts', 'regulations') ? 'active' : '' }}">
+                {{-- <li class="nav-item dropdown {{ request()->is('publications', 'acts', 'regulations') ? 'active' : '' }}">
                     <a class="nav-link dropdown-toggle {{ request()->is('publications', 'acts', 'regulations') ? 'active' : '' }}" href="#" id="navbarDropdownPublications" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         {{ __('PUBLICATIONS') }}
                     </a>
-                </li>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownGallery">
+                        <li><a class="dropdown-item {{ request()->is('gallery') ? 'active' : '' }}" href="{{ route('Images') }}">{{ __('Acts and Regulations') }}</a></li>
+                    </ul>
+                </li> --}}
 
-                <li class="nav-item {{ request()->is('gallery') ? 'active' : '' }}">
+                {{-- <li class="nav-item {{ request()->is('gallery') ? 'active' : '' }}">
                     <a class="nav-link {{ request()->is('gallery') ? 'active' : '' }}" href="{{ route('Images') }}">{{ __('DOWNLOADS') }}</a>
-                </li>
+                </li> --}}
                     
                 </li>
                     

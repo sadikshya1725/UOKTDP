@@ -5,7 +5,7 @@
 <section class="contact_form">
     <div class="container">
         <h1 class="cat_title">
-            {{ __('Contact') }}
+            {{ __('CONTACT') }}
         </h1>
         <div class="row mt-3">
             <div class="col-md-6 cform_left">

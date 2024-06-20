@@ -304,6 +304,7 @@ Route::get('information_page/{id}', [App\Http\Controllers\RenderController::clas
 
 
 
+
 // FOR CONTEXT CONTROLLER
 
 

@@ -16,12 +16,12 @@ class SiteSettingSeeder extends Seeder
     {
         SiteSetting::create([
             'govn_name' => 'Government of Bagmati',
-            'ministry_name' => 'Ministry of Culture, Tourism & Civil Aviation',
-            'department_name' => 'Tourism Development Plan',
+            'ministry_name' => 'Ministry of Culture, Tourism & Coperative',
+            'department_name' => 'Tourism Development Project',
             'office_name' => 'Unit Office, Kathmandu',
-            'office_address' => 'Baneshwar, Kathmandu',
-            'office_contact' => '977-01-6610004, 977-01-6610448, 977-01-6610005',
-            'office_mail' => 'national.art.museum.bhaktapur@gmail.com',
+            'office_address' => 'New Baneswor, Nepal',
+            'office_contact' => '9851330905',
+            'office_mail' => 'kathtdp2078@gmail.com',
             'main_logo' => 'main_logo.png',
             'side_logo' => 'side_logo.jpg',
             'flag_logo' => 'nepal_flag.gif',

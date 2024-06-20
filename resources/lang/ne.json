@@ -13,7 +13,7 @@
     "Publication" : "प्रकाशन",
     "Tender" : "बाेलपत्र",
     "Information" : "जानकारी",
-    "Act & Regulations" : "ऐन तथा नियमावली",
+    "Acts and Regulations" : "ऐन तथा नियमावली",
     "Regulations" : "नियमावली",
     "Directory" : "निर्देशिका",
     "Press Release" : "प्रेस विज्ञप्ति",
@@ -26,7 +26,7 @@
     "Video" :"भिडियाे",
     "PUBLICATIONS":"प्रकाशनहरू",
     "DOWNLOADS":"डाउनलोडहरू",
-    "FAQ":"",
+    "FAQ":"बारम्बार सोधिरहने प्रश्नहरु",
 
     "CONTACT" : "सम्पर्क",
     "Contact Us" : "सम्पर्क",
@@ -46,6 +46,7 @@
     "Ministry of Culture, Tourism & Civil Aviation": "संस्कृति, पर्यटन तथा सहकारी मन्त्रालय",
     "Tourism Development Plan" : "पर्यटन विकास आयोजना",
     "Unit Office, Kathmandu" : "इकाई कार्यालय, काठमाडाैँ",
+    "New Baneshwar, Nepal" : " नया बानेश्वर , नेपाल ",
     "Baneshwar, Kathmandu" : "बानेश्वर , काठमाडौं",
     
     "National Youth Council": "राष्ट्रिय युवा परिषद्",
@@ -107,7 +108,8 @@
     "National Youth Council Office" : "राष्ट्रिय युवा परिषद्को कार्यालय",
     "Organizational Chart" : "सङगठन तालिका",
     "BUDGET & PROGRAMS" : "बजेट तथा कार्यक्रम",
-    "Oppurtunity" : "अवसर"
+    "Oppurtunity" : "अवसर",
+    "Office Of The Prime Minister And Council Of Minister" : ""
    
 
 }

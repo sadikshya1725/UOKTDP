@@ -3,7 +3,7 @@
 <section class="cover">
     <div class="container">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         @foreach ($coverimages as $key => $coverimage)
@@ -25,18 +25,15 @@
                         </div> --}}
                         @foreach ($coverimages as $key => $coverimage)
                         <div class="carousel-item">
-
-                            {{-- {{ route('post.render', ['slug' => $news->slug ?? '', 'id' => $news->id ?? '']) }} --}}
                             <a href="">
                                 <img src="{{ asset('uploads/coverimage/' . $coverimage->image) }}" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
+                                <div class="post_description">
                                     <h5>{{ $coverimage->title }}</h5>
-
                                 </div>
                             </a>
-
                         </div>
                         @endforeach
+ 
 
                     </div>
 
@@ -54,7 +51,7 @@
             </div>
 
 
-            <div class="col-md-3">
+            <div class="col-md-4">
                 @foreach($teams as $team)
                 <div class="right_intro card card_one">
 
