@@ -15,6 +15,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\InstaController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OtherController;
 use App\Http\Controllers\VideoController;
@@ -56,6 +57,7 @@ use App\Http\Controllers\ExecutiveDetailController;
 // });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/faq', [HomeController::class, 'faq'])->name('FAQ');
 
 // Route::get('/single/{slug}', [SingleController::class, 'index']);
 
@@ -302,6 +304,14 @@ Route::get('videos', [App\Http\Controllers\RenderController::class, 'render_vide
 Route::get('contact_page', [App\Http\Controllers\RenderController::class, 'contact_page'])->name('Contact');
 Route::get('information_page/{id}', [App\Http\Controllers\RenderController::class, 'singleinformation_page'])->name('information_page');
 
+
+
+Route::get('/admin/faqs', [FaqController::class, 'index'])->name('admin.faqs.index');
+Route::get('/admin/faqs/create', [FaqController::class, 'create'])->name('admin.faqs.create');
+Route::post('/admin/faqs/store', [FaqController::class, 'store'])->name('admin.faqs.store');
+Route::get('/admin/faqs/{faq}/edit', [FaqController::class, 'edit'])->name('admin.faqs.edit');
+Route::get('/admin/faqs/{faq}', [FaqController::class, 'update'])->name('admin.faqs.update');
+Route::delete('/admin/faqs/{id}/delete', [FaqController::class, 'destroy'])->name('admin.faqs.destroy');
 
 
 

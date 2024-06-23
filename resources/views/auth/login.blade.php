@@ -108,7 +108,7 @@ $sitesetting = SiteSetting::first();
                                             </div>
                                             <div class="mb-3">
                                                 <!-- Google reCAPTCHA -->
-                                                <div class="g-recaptcha" data-sitekey="6Lc8uPopAAAAAK6N6iMI4_2j_aC9akT-C8K9bhB2"></div>
+                                                {{-- <div class="g-recaptcha" data-sitekey="6Lc8uPopAAAAAK6N6iMI4_2j_aC9akT-C8K9bhB2"></div> --}}
                                             </div>
                                             <div class="mb-3">
                                                 <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Log in</button>

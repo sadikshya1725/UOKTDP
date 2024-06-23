@@ -15,7 +15,7 @@ class SiteSettingSeeder extends Seeder
     public function run()
     {
         SiteSetting::create([
-            'govn_name' => 'Government of Bagmati',
+            'govn_name' => 'Bagmati Province Government',
             'ministry_name' => 'Ministry of Culture, Tourism & Coperative',
             'department_name' => 'Tourism Development Project',
             'office_name' => 'Unit Office, Kathmandu',

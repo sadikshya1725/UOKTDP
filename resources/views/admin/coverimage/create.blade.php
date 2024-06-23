@@ -33,20 +33,15 @@
 
 
 
-    <form id="quickForm" novalidate="novalidate" method="POST" action="{{ route('Admin.Coverimage.Store') }}" enctype="multipart/form-data">
+    <form id="quickForm" novalidate="novalidate" method="POST" action="{{ route('Admin.Coverimage.Store') }}"
+        enctype="multipart/form-data">
         @csrf
         <div class="card-body">
             <div class="form-group">
                 <label for="title">Title</label><span style="color:red; font-size:large"> *</span>
-                <div class="title-overlay-container">
-                    <input style="width:auto;" type="text" name="title" class="form-control" id="title" value="{{ old('title') }}" placeholder="Title">
-                    <div class="title-overlay">
-                        <h1 id="title-display"></h1>
-                    </div>
-                </div>
+                <input style="width:auto; " type="text" name="title" class="form-control" id="title"
+                    value="{{ old('title') }}" placeholder="Title">
             </div>
-        </div>
-    </form>
 
             <div class="form-group">
                 <label for="image">Image</label><span style="color:red; font-size:large"> *</span>
@@ -64,11 +59,6 @@
         </div>
     </form>
 
-    <script>
-        document.getElementById('title').addEventListener('input', function() {
-            document.getElementById('title-display').textContent = this.value;
-        });
-    </script>
 
     <!-- Main row -->
 

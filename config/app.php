@@ -168,7 +168,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Biscolab\ReCaptcha\ReCaptchaServiceProvider::class,
-
+        App\Providers\VisitorServiceProvider::class,
         /*
          * Package Service Providers...
          */

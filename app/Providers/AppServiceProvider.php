@@ -5,6 +5,9 @@ namespace App\Providers;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+use App\Models\Visitor;
+use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,5 +31,27 @@ class AppServiceProvider extends ServiceProvider
         //
         Schema::DefaultStringLength(121);
         Paginator::useBootstrap();
+        // Share visitor count with all views
+        View::composer('*', function ($view) {
+            $ipAddress = request()->ip();
+            $today = Carbon::today();
+
+            // Check if the IP address has already been recorded today
+            $visit = Visitor::where('ip_address', $ipAddress)
+                ->whereDate('created_at', $today)
+                ->first();
+
+            if (!$visit) {
+                // Record the visit
+                Visitor::create(['ip_address' => $ipAddress]);
+            }
+
+            // Get the total visitor count
+            $visitorCount = Visitor::count();
+
+            // Share $visitorCount variable with all views
+            $view->with('visitorCount', $visitorCount);
+        });
+    
     }
 }

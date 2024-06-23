@@ -239,6 +239,14 @@ use App\Models\SiteSetting;
                                 class="nav-link-text ps-1">Link</span></div>
                     </a>
 
+                    <a class="nav-link" href="{{ route('admin.faqs.index') }}" role="button" data-bs-toggle="collapse"
+                        aria-expanded="false" aria-controls="events">
+                        <div class="d-flex align-items-center"><span class="nav-link-icon">
+                            <i class="fas fa-users"></i>
+                            </span><span class="nav-link-text ps-1">FAQ</span></div>
+                    </a>
+                    
+
 
 
 

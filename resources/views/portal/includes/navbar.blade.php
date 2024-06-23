@@ -127,9 +127,9 @@
                     <a class="nav-link {{ request()->is('contact_page') ? 'active' : '' }}" href="{{ route('Contact') }}">{{ __('CONTACT') }}</a>
                 </li>
           
-            <li class="nav-item {{ request()->is('gallery') ? 'active' : '' }}">
-                <a class="nav-link {{ request()->is('gallery') ? 'active' : '' }}" href="{{ route('Images') }}">{{ __('FAQ') }}</a>
-            </li>
+                <li class="nav-item {{ request()->is('faq') ? 'active' : '' }}">
+                    <a class="nav-link {{ request()->is('faq') ? 'active' : '' }}" href="{{ route('FAQ') }}">{{ __('FAQ') }}</a>
+                </li>
                 
             </li>
         </div>

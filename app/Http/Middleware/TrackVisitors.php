@@ -4,18 +4,31 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use App\Models\Visitor; 
+use Carbon\Carbon;
 
 class TrackVisitors
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
-     */
     public function handle(Request $request, Closure $next)
     {
+        $ipAddress = $request->ip();
+        $userAgent = $request->header('User-Agent'); 
+        $now = Carbon::now();
+
+        // Check if the IP address has already been recorded today
+        $visitor = Visitor::where('ip_address', $ipAddress)
+                          ->whereDate('visited_at', $now->toDateString())
+                          ->first();
+
+        if (!$visitor) {
+            // Record the visit
+            Visitor::create([
+                'ip_address' => $ipAddress,
+                'user_agent' => $userAgent,
+                'visited_at' => $now
+            ]);
+        }
+
         return $next($request);
     }
 }

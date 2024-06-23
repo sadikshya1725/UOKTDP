@@ -8,11 +8,11 @@
                     </div>
                     <div class="col-md-8 d-flex align-items-center justify-content-center">
                         <p class="top_header text-center">
-                            {{ __('Government of Bagmati') }} <br>
-                            <span class="ministry_name">{{ __('Ministry of Culture, Tourism & Civil Aviation') }}</span><br>
-                            {{ __('Tourism Development Plan') }}<br>
-                            <span class="office_name">{{ __('Unit Office, Kathmandu') }}</span><br>
-                            {{ __('Baneshwar, Kathmandu') }}
+                            {{ __('Bagmati Province Government') }} <br>
+                            <span class="ministry_name">{{ __('Ministry of Culture, Tourism & Coperative') }}</span><br>
+                            {{ __('Tourism Development Project') }}<br>
+                            <span class="office_name">{{ __('Unit Office Kathmandu') }}</span><br>
+                            {{ __('New Baneshwar, Nepal') }}
                         </p>
                     </div>
                 </div>

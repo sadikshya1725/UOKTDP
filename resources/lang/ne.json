@@ -3,6 +3,7 @@
     "ABOUT US" : "हाम्रो बारेमा",
     "Introduction" : "कार्यालयकाे परिचय",
     "Employee Details" : "कर्मचारी विवरण",
+    "TEAM" : "कर्मचारी विवरण",
     "District Committees" : "जिल्ला समितीहरु",
     "Council Members" : "परिषद् सदस्य",
     "Message from the Administrative Head" : "प्रशासकीय प्रमुखको सन्देश",
@@ -38,14 +39,14 @@
     "Executive Name" : "अध्यक्षको नाम थर",
     "Address" : "ठेगाना" ,
     "Phone No." : "फोन नं",
-    "Important links" : "महत्वपुर्ण लिंकहरू",
+    "Important Links" : "महत्वपुर्ण लिंकहरू",
     "Mail us"  : "मेल गर्नुहोस्",
     "Call us" : "कल गर्नुहोस्",
     "Find us" : "सम्पर्क गर्नुहोस्",
-    "Government of Bagmati": "बागमती प्रदेश सरकार",
-    "Ministry of Culture, Tourism & Civil Aviation": "संस्कृति, पर्यटन तथा सहकारी मन्त्रालय",
-    "Tourism Development Plan" : "पर्यटन विकास आयोजना",
-    "Unit Office, Kathmandu" : "इकाई कार्यालय, काठमाडाैँ",
+    "Bagmati Province Government": "बागमती प्रदेश सरकार",
+    "Ministry of Culture, Tourism & Coperative": "संस्कृति, पर्यटन तथा सहकारी मन्त्रालय",
+    "Tourism Development Project" : "पर्यटन विकास आयोजना",
+    "Unit Office Kathmandu" : "इकाई कार्यालय काठमाडाैँ",
     "New Baneshwar, Nepal" : " नया बानेश्वर , नेपाल ",
     "Baneshwar, Kathmandu" : "बानेश्वर , काठमाडौं",
     
@@ -90,10 +91,10 @@
     "Computer Operator" : "कम्प्युटर अपरेटर",
     "Apsara Koirala" : "अप्सरा कोइराला",
     "Naresh Maharjan" : "नरेश महर्जन",
-    "Driver" : "चालक",
+    
     "Gokul Bhujel" : "गोकुल भुजेल",
     "Laxmi Rai" : "लक्ष्मी राई",
-    "Office Helper" : "कार्यालय सहयोगी",
+    
     "Prem Kumari Khatri" : "प्रेमकुमारी खत्री",
     "Sarita Karki" : "सारीता कार्की",
     "Youth Activity" : "युवा गतिविधि",
@@ -109,7 +110,62 @@
     "Organizational Chart" : "सङगठन तालिका",
     "BUDGET & PROGRAMS" : "बजेट तथा कार्यक्रम",
     "Oppurtunity" : "अवसर",
-    "Office Of The Prime Minister And Council Of Minister" : ""
+    
+    "Office Of The Prime Minister And Council Of Minister": "प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालय",
+    "Internal Affairs and Law Ministry": "आन्तरिक मामिला तथा कानुन मन्त्रालय",
+    "Office of Chief Minister and Council of Ministers": "मुख्यमन्त्री तथा मन्त्रिपरिषद्को कार्यालय",
+    "Ministry of Economic affairs and Planning": "अर्थ मामिला तथा योजना मन्त्रालय",
+    "Ministry of Physical Infrastructure Development": "भौतिक पूर्वाधार विकास मन्त्रालय",
+    "Ministry of Forests and Environment": "वन तथा वातावरण मन्त्रालय",
+    "Ministry of Labor Employment and Transport": "श्रम, रोजगार तथा यातायात मन्त्रालय",
+    "Ministry of Social Development": "सामाजिक विकास मन्त्रालय",
+    "Ministry of Health": "स्वास्थ्य मन्त्रालय",
+    "Province Policy and Planning Commission": "प्रदेश नीति तथा योजना आयोग",
+    "Province Public Service Commission": "प्रदेश लोक सेवा आयोग",
+    "State Head Office, Bagamati Province": "प्रदेश प्रमुखको कार्यालय",
+    
+
+    "************TeamMembers***************" : "Starts Here",
+
+    "Dron Bikram Karki": "द्रोण विक्रम कार्की",
+    "Pratibha Dhakal":"प्रतिभा ढकाल",
+    "Saurav Shreshtha":"सौरभ श्रेष्ठ",
+    "Bishwash Parajuli":"बिश्वास पराजुली",
+    "Dipendra Kharel ":"दिपेन्द्र खरेल",
+    "Pramod Gautam":"प्रमोद गौतम",
+    "Amit Kumar Sah":"अमित कुमार साह",
+    "Krishna Dev Shreshtha":"कृष्ण देव श्रेष्ठ",
+    "Sumit Kumar":"सुमित कुमार",
+    "Mohan Singh Thaguna":"मोहन सिंह ठगुन्ना",
+    "Konika Wati":"कोनिका वाटी",
+    "Suraj Singh":"सुरज सिंह",
+    "Loknath Ghimire":"लोकनाथ घिमिरे",
+    "Prem Singh Karki":"प्रेमसिंह कार्की",
+    "Bishnu Swar":"विष्णु स्वार",
+    "Jeevan Sahi":"जीवन साही",
+    "Sahara Tamang":"साहारा तामाङ्ग",
+    "Sabina Khanal":"सविना खनाल",
+    "Manjesh Ram Vaidhya":"मन्जेश राम वैद्य",
+    "Nirjala Bohra":"निर्जल बोहरा",
+    "Ram Jeevan Thakur":"राम जीवन ठाकुर",
+    "Bishnu Prasad Timilsina":"विष्णु प्रसाद तिमेल्सेना",
+    "Sandip Thapa":"सन्दिप थापा",
+    "Damodar Nepal":"दामोदर नेपाल",
+    "Tika Prasad Sapkota":"टीका प्रसाद सापकोटा",
+    "Lakshmi Dhakal":"लक्ष्मी ढकाल",
+    "Manish Kumar Tamang":"मनिष कुमार तामाङ्ग",
+    "Milan Bhandari":"मिलन भण्डारी",
+    
+    "Engineer":"इन्जिनियर",
+    "Sub-Engineer":"सव-इन्जिनियर",
+    "Head-Engineer": "विशेषज्ञ इन्जिनियर",
+    "Driver":"ह.स.चा.",
+    "Office Helper":"का.स.",
+
+    "Follow us":"फलो गर्नुहोस"
+
+
+
    
 
 }

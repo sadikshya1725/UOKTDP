@@ -16,6 +16,7 @@ use App\Http\Controllers\UtilityFunctions;
 
 class AboutController extends Controller
 {
+    
     public function index()
     {
 
