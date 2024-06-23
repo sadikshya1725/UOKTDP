@@ -32,33 +32,37 @@
                     </div>
                 @endif
 
-                <table class="table table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($faqs as $faq)
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead>
                             <tr>
-                                <td>{{ $faq->question }}</td>
-                                <td>
-                                    <div style="display: flex; flex-direction: row;">
-                                        <!-- Link to the edit page -->
-                                        <a href="{{ route('admin.faqs.edit', $faq->id) }}" class="btn btn-warning">
-                                            Update
-                                        </a>
-                                        <!-- Example delete button (commented out) -->
-                                        <a href="{{ url('admin/faqs/delete/'.$faq->id) }}">
-                                            <button type="button" class="btn btn-danger">Delete</button>
-                                        </a>
-                                    </div>
-                                </td>
+                                <th>Title</th>
+                                <th>Action</th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach ($faqs as $faq)
+                                <tr>
+                                    <td>{{ $faq->question }}</td>
+                                    <td>
+                                        <div style="display: flex; flex-direction: row;">
+                                            <!-- Link to the edit page -->
+                                            <a href="{{ route('admin.faqs.edit', $faq->id) }}" class="btn btn-warning">
+                                                Update
+                                            </a>
+                                            {{-- <!-- Delete form -->
+                                            <form action="{{ route('admin.faqs.destroy', $faq->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this FAQ?');">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form> --}}
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div><!-- /.table-responsive -->
             </div><!-- /.container-fluid -->
         </div><!-- /.content-header -->
     </div><!-- /.content-wrapper -->

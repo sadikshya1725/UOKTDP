@@ -99,14 +99,14 @@ class FaqController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        try {
-            $faq = Faq::findOrFail($id);
-            $faq->delete();
+{
+    try {
+        $faq = Faq::findOrFail($id);
+        $faq->delete();
 
-            return redirect()->route('admin.faqs.index')->with('successMessage', 'FAQ deleted successfully');
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Failed to delete FAQ. Please try again.');
-        }
+        return redirect()->route('admin.faqs.index')->with('successMessage', 'FAQ deleted successfully');
+    } catch (\Exception $e) {
+        return redirect()->back()->with('error', 'Failed to delete FAQ. Please try again.');
     }
+}
 }

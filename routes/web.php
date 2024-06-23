@@ -305,12 +305,11 @@ Route::get('contact_page', [App\Http\Controllers\RenderController::class, 'conta
 Route::get('information_page/{id}', [App\Http\Controllers\RenderController::class, 'singleinformation_page'])->name('information_page');
 
 
-
 Route::get('/admin/faqs', [FaqController::class, 'index'])->name('admin.faqs.index');
 Route::get('/admin/faqs/create', [FaqController::class, 'create'])->name('admin.faqs.create');
 Route::post('/admin/faqs/store', [FaqController::class, 'store'])->name('admin.faqs.store');
 Route::get('/admin/faqs/{faq}/edit', [FaqController::class, 'edit'])->name('admin.faqs.edit');
-Route::get('/admin/faqs/{faq}', [FaqController::class, 'update'])->name('admin.faqs.update');
+Route::put('/admin/faqs/{id}', [FaqController::class, 'update'])->name('admin.faqs.update');
 Route::delete('/admin/faqs/{id}/delete', [FaqController::class, 'destroy'])->name('admin.faqs.destroy');
 
 
