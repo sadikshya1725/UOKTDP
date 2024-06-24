@@ -21,7 +21,7 @@ use App\Models\Information;
 use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 use App\Models\Visitor; 
-use App\Models\FAQ; 
+use App\Models\Faq; 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
@@ -122,7 +122,7 @@ class HomeController extends Controller
     
     public function faq()
     {
-    $faqs = FAQ::all();
+    $faqs = Faq::all();
     $data = $this->fetchCommonData(request()); // Assuming you use request() helper to pass Request object
 
     return view('portal.faq', compact('faqs') + $data);

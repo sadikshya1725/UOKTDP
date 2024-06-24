@@ -4,7 +4,9 @@
 @section('content')
     <section class="faq-section">
         <div class="container">
-            <h1>FAQs</h1>
+            <h1 class="cat_title">
+                {{ __('FAQ') }}
+            </h1>
             <div class="accordion" id="faqAccordion">
                 @foreach ($faqs as $faq)
                     <div class="accordion-item">

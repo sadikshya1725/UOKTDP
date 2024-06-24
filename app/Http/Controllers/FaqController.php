@@ -16,7 +16,7 @@ class FaqController extends Controller
     public function index()
     {
         $faqs = Faq::paginate(50); // Assuming Faq is your model for FAQs
-        return view('admin.faq.index', ['faqs' => $faqs, 'page_title' => 'FAQs']);
+        return view('admin.FAQ.index', ['faqs' => $faqs, 'page_title' => 'FAQs']);
     }
 
     /**
@@ -26,7 +26,7 @@ class FaqController extends Controller
      */
     public function create()
     {
-        return view('admin.faq.create', ['page_title' => 'Create FAQ']);
+        return view('admin.FAQ.create', ['page_title' => 'Create FAQ']);
     }
 
     /**
@@ -63,7 +63,7 @@ class FaqController extends Controller
     public function edit($id)
     {
         $faq = Faq::findOrFail($id);
-        return view('admin.faq.update', ['faq' => $faq, 'page_title' => 'Update FAQ']);
+        return view('admin.FAQ.update', ['faq' => $faq, 'page_title' => 'Update FAQ']);
     }
 
     /**
