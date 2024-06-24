@@ -125,7 +125,7 @@ class HomeController extends Controller
     $faqs = FAQ::all();
     $data = $this->fetchCommonData(request()); // Assuming you use request() helper to pass Request object
 
-    return view('portal.layouts.faq', compact('faqs') + $data);
+    return view('portal.faq', compact('faqs') + $data);
 }
 
     

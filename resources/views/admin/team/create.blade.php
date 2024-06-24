@@ -40,7 +40,11 @@
             </div>
 
             <div class="form-group">
-                <label for="exampleInputEmail1">Name</label>
+                <label for="exampleInputEmail1">Name in English</label>
+                <input type="text" name="name_en" class="form-control" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Name in Nepali</label>
                 <input type="text" name="name" class="form-control" placeholder="Name" required>
             </div>
             <div class="form-group">

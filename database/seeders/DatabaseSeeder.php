@@ -19,8 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SiteSettingSeeder::class);
         $this->call(AboutSeeder::class);
         $this->call(MvcSeeder::class);
-        $this->call(OrgchartSeeder::class);
-        $this->call(MessageSeeder::class);
         $this->call(FavIconSeeder::class);
         $this->call(ContextSeeder::class);
         $this->call(FooterLinksSeeder::class);

@@ -97,6 +97,7 @@ public function orderIndex(){
         $this->validate($request, [
             'role' => 'required|string',
             'name' => 'required|string',
+            'name_en' => 'required|string',
             'position' => 'required|string',
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:1536',
             'contact_number' => 'required|string',
@@ -118,6 +119,7 @@ public function orderIndex(){
 
         $team->role = $request->role;
             $team->name = $request->name;
+            $team->name_en = $request->name_en;
             $team->position = $request->position;
             $team->image = $newImageName;
             $team->contact_number = $request->contact_number;
@@ -187,6 +189,7 @@ public function orderIndex(){
         $this->validate($request, [
             'role' => 'sometimes|string',
             'name' => 'required|string',
+            'name_en' => 'required|string',
             'position' => 'required|string',
             'image' => 'image|mimes:jpg,png,jpeg,gif,svg|max:1536',
             'contact_number' => 'required|string',
@@ -206,6 +209,7 @@ public function orderIndex(){
 
             $team->role = $request->role;
             $team->name = $request->name;
+            $team->name_en = $request->name_en;
             $team->position = $request->position;
             // $team->image = $newImageName;
             $team->contact_number = $request->contact_number;
