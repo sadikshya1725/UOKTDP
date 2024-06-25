@@ -58,11 +58,11 @@ use App\Models\SiteSetting;
                                 </div>
                             </a><!-- more inner pages-->
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('Admin.Mvc.Index') }}">
+                        {{-- <li class="nav-item"><a class="nav-link" href="{{ route('Admin.Mvc.Index') }}">
                                 <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Mission, Vision, Values</span>
                                 </div>
                             </a><!-- more inner pages-->
-                        </li>
+                        </li> --}}
                         <li class="nav-item"><a class="nav-link" href="{{ route('Admin.Orgchart.Index') }}">
                                 <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Organizational Chart</span>
                                 </div>
@@ -245,13 +245,13 @@ use App\Models\SiteSetting;
                             </span><span class="nav-link-text ps-1">FAQ</span></div>
                     </a>
 
-                    <a class="nav-link" href="{{ route('Admin.Youth.Index') }}" role="button">
+                    {{-- <a class="nav-link" href="{{ route('Admin.Youth.Index') }}" role="button">
                         <div class="d-flex align-items-center"><span class="nav-link-icon">
                             <i class="fas fa-sitemap"></i>
 
-                                <!-- <span class="fas fa-comments"></span> Font Awesome fontawesome.com --></span><span
-                                class="nav-link-text ps-1">Youth Activity/Stats</span></div>
-                    </a>
+                                {{-- <!-- <span class="fas fa-comments"></span> Font Awesome fontawesome.com --></span><span
+                                class="nav-link-text ps-1">Youth Activity/Stats</span></div> --}}
+                    {{-- </a> --}} 
 
                     <a class="nav-link dropdown-indicator" href="#user" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="user">
                         <div class="d-flex align-items-center"><span class="nav-link-icon"><svg class="svg-inline--fa fa-user fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg><!-- <span class="fas fa-user"></span> Font Awesome fontawesome.com --></span><span class="nav-link-text ps-1">Documents</span></div>

@@ -14,46 +14,6 @@
         </div><!-- /.col -->
     </div><!-- /.row -->
 
-    <!-- Contact Form -->
-    <form id="contactForm" method="post" action="{{ url('contactus/submit') }}">
-        @csrf
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
-            @error('name')
-                <span style="color: red;">{{ $message }}</span>
-            @enderror
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
-            @error('email')
-                <span style="color: red;">{{ $message }}</span>
-            @enderror
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}" required>
-            @error('phone')
-                <span style="color: red;">{{ $message }}</span>
-            @enderror
-        </div>
-        <div class="form-group">
-            <label for="message">Message</label>
-            <textarea class="form-control" id="message" name="message" rows="4" required>{{ old('message') }}</textarea>
-            @error('message')
-                <span style="color: red;">{{ $message }}</span>
-            @enderror
-        </div>
-
-        <!-- Add reCAPTCHA field -->
-        <div class="form-group">
-            <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-
     <!-- Contact Messages Table -->
     <table class="table table-bordered table-hover mt-4">
         <thead>

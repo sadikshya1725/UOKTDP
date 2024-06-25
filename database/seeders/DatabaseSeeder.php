@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(TeamSeeder::class);
         $this->call(SiteSettingSeeder::class);
         $this->call(AboutSeeder::class);
-        $this->call(MvcSeeder::class);
         $this->call(FavIconSeeder::class);
         $this->call(ContextSeeder::class);
         $this->call(FooterLinksSeeder::class);
