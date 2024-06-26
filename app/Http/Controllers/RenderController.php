@@ -37,9 +37,9 @@ class RenderController extends Controller
 
         $contextnav = Context::all();
         $about = About::first();
-        $mvcs = Mvc::latest()->take(4)->get();
+        // $mvcs = Mvc::latest()->take(4)->get();
 
-        return view('portal.about', compact('sitesetting', 'links', 'notices', 'about', 'mvcs', 'contextnav', 'noticestitle'));
+        return view('portal.about', compact('sitesetting', 'links', 'notices', 'about', 'contextnav', 'noticestitle'));
     }
 
     public function render_team(){

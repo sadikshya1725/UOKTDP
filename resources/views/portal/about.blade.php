@@ -23,7 +23,7 @@
     </div>
 </section>
 
-<section class="mvc_section">
+{{-- <section class="mvc_section">
     <div class="container">
      
             <div class="row">
@@ -39,7 +39,7 @@
                         <img src="{{asset('uploads/mvc/' . $mvc->image)}}" alt="" class="square_image">
                     </div>
                 </div>
-                @endforeach
+                @endforeach --}}
     
    
        
