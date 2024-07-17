@@ -17,6 +17,15 @@ class Information extends Model
     {
         return $this->belongsToMany(Context::class, 'informations_contexts');
     }
+    protected $fillable = [
+        'type',
+        'title',
+        'slug',
+        'gdocs',
+        'description',
+        'image',
+        'file'
+    ];
     public function sluggable() : array
     {
         return [

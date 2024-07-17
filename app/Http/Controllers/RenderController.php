@@ -25,7 +25,13 @@ use App\Models\Youth;
 
 class RenderController extends Controller
 {
-    public function render_about(){
+    protected function getBreakingNews()
+    {
+        return Information::where('type', 'breaking')->latest()->take(10)->get();
+    }
+
+    public function render_about()
+    {
         $sitesetting = SiteSetting::first();
         $links = Link::latest()->take(7)->get();
         $noticestitle = Context::where('title', 'Notice')->latest()->first();
@@ -37,12 +43,13 @@ class RenderController extends Controller
 
         $contextnav = Context::all();
         $about = About::first();
-        // $mvcs = Mvc::latest()->take(4)->get();
+        $breakingNews = $this->getBreakingNews();
 
-        return view('portal.about', compact('sitesetting', 'links', 'notices', 'about', 'contextnav', 'noticestitle'));
+        return view('portal.about', compact('sitesetting', 'links', 'notices', 'about', 'contextnav', 'noticestitle', 'breakingNews'));
     }
 
-    public function render_team(){
+    public function render_team()
+    {
         $sitesetting = SiteSetting::first();
         $links = Link::latest()->take(7)->get();
         $noticestitle = Context::where('title', 'Notice')->latest()->first();
@@ -54,11 +61,13 @@ class RenderController extends Controller
 
         $contextnav = Context::all();
         $teams = Team::all();
+        $breakingNews = $this->getBreakingNews();
 
-        return view('portal.team', compact('sitesetting', 'links', 'notices', 'teams', 'contextnav', 'noticestitle'));
+        return view('portal.team', compact('sitesetting', 'links', 'notices', 'teams', 'contextnav', 'noticestitle', 'breakingNews'));
     }
 
-    public function render_chart(){
+    public function render_chart()
+    {
         $sitesetting = SiteSetting::first();
         $links = Link::latest()->take(7)->get();
         $noticestitle = Context::where('title', 'Notice')->latest()->first();
@@ -70,11 +79,13 @@ class RenderController extends Controller
 
         $orgchart = Orgchart::first();
         $contextnav = Context::all();
+        $breakingNews = $this->getBreakingNews();
 
-        return view('portal.organizationalchart', compact('sitesetting', 'links', 'notices', 'orgchart', 'contextnav', 'noticestitle'));
+        return view('portal.organizationalchart', compact('sitesetting', 'links', 'notices', 'orgchart', 'contextnav', 'noticestitle', 'breakingNews'));
     }
 
-    public function render_images(){
+    public function render_images()
+    {
         $sitesetting = SiteSetting::first();
         $links = Link::latest()->take(7)->get();
         $noticestitle = Context::where('title', 'Notice')->latest()->first();
@@ -86,11 +97,13 @@ class RenderController extends Controller
 
         $contextnav = Context::all();
         $images = MyImage::latest()->get();
+        $breakingNews = $this->getBreakingNews();
 
-        return view('portal.images', compact('sitesetting', 'links', 'notices', 'images', 'contextnav', 'noticestitle'));
+        return view('portal.images', compact('sitesetting', 'links', 'notices', 'images', 'contextnav', 'noticestitle', 'breakingNews'));
     }
 
-    public function render_image($id){
+    public function render_image($id)
+    {
         $sitesetting = SiteSetting::first();
         $links = Link::latest()->take(7)->get();
         $noticestitle = Context::where('title', 'Notice')->latest()->first();
@@ -102,11 +115,13 @@ class RenderController extends Controller
 
         $contextnav = Context::all();
         $image = MyImage::find($id);
+        $breakingNews = $this->getBreakingNews();
 
-        return view('portal.image', compact('sitesetting', 'links', 'notices', 'image', 'contextnav', 'noticestitle'));
+        return view('portal.image', compact('sitesetting', 'links', 'notices', 'image', 'contextnav', 'noticestitle', 'breakingNews'));
     }
 
-    public function render_videos(){
+    public function render_videos()
+    {
         $sitesetting = SiteSetting::first();
         $links = Link::latest()->take(7)->get();
         $noticestitle = Context::where('title', 'Notice')->latest()->first();
@@ -118,11 +133,13 @@ class RenderController extends Controller
 
         $contextnav = Context::all();
         $videos = Video::latest()->get();
+        $breakingNews = $this->getBreakingNews();
 
-        return view('portal.video', compact('sitesetting', 'links', 'notices', 'videos', 'contextnav', 'noticestitle'));
+        return view('portal.video', compact('sitesetting', 'links', 'notices', 'videos', 'contextnav', 'noticestitle', 'breakingNews'));
     }
 
-    public function contact_page(){
+    public function contact_page()
+    {
         $sitesetting = SiteSetting::first();
         $links = Link::latest()->take(7)->get();
         $noticestitle = Context::where('title', 'Notice')->latest()->first();
@@ -133,11 +150,13 @@ class RenderController extends Controller
         }
 
         $contextnav = Context::all();
+        $breakingNews = $this->getBreakingNews();
 
-        return view('portal.contact_page', compact('sitesetting', 'links', 'notices', 'contextnav', 'noticestitle'));
+        return view('portal.contact_page', compact('sitesetting', 'links', 'notices', 'contextnav', 'noticestitle', 'breakingNews'));
     }
 
-    public function singleinformation_page($contextId){
+    public function singleinformation_page($contextId)
+    {
         $context = Context::findOrFail($contextId);
         $informations = $context->get_informations()->latest()->get();
 
@@ -151,6 +170,8 @@ class RenderController extends Controller
             $notices = $noticestitle->get_informations()->latest()->take(10)->get();
         }
 
-        return view('portal.information_page', compact('sitesetting', 'links', 'notices', 'context', 'informations', 'contextnav', 'noticestitle'));
+        $breakingNews = $this->getBreakingNews();
+
+        return view('portal.information_page', compact('sitesetting', 'links', 'notices', 'context', 'informations', 'contextnav', 'noticestitle', 'breakingNews'));
     }
 }

@@ -35,7 +35,7 @@
         </select> --}}
         <div class="form-group">
             <label for="context">Context</label>
-            <select name ="context">
+            <select name ="type">
               {{-- <option value="0" disabled selected> --select type-- </option> --}}
               {{-- @if ($post->getCategories->contains($category->id)) --}}
                 @foreach ($context as $contexts )

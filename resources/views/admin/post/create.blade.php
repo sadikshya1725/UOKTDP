@@ -23,9 +23,9 @@
         <form id="quickForm" novalidate="novalidate" method="POST" action="{{ route('Admin.Posts.Store') }}"
         enctype="multipart/form-data">
         @csrf
-        <select name="categories" id="">
-            <option value="0" disabled selected>--Select Type --</option>
-            @foreach ($categories as $category )
+        <select name="category" id="category">
+            <option value="0" disabled selected>--Select Type--</option>
+            @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->title }}</option>
             @endforeach
         </select>

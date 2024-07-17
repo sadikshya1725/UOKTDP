@@ -17,27 +17,24 @@ class InformationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    // public function index()
+    // {
         // $pressreleases = Information::whereType("pressrelease")->latest()->get()->take(5);
         // $news = Information::whereType("news")->latest()->get()->take(5);
         // $otheropt = Information::whereType("other")->latest()->get()->take(5);
         // $notices = Information::whereType('notice')->latest()->get()->take(5);
         // $tenders = Information::whereType('tender')->latest()->get()->take(5);
 
-        $information = Information::latest()->paginate(20);
+        public function index()
+{
+    $information = Information::with('get_contexts')->latest()->paginate(20);
 
-        return view('admin.information.index', [
-            'page_title' => 'Information',
-            'information' => $information,
-        //    "notices" => $notices,
-        //    "tenders" => $tenders,
-        //     "pressreleases" => $pressreleases,
-
-        //     "news" => $news,
-        //     "otheropt" => $otheropt,
-        ]);
-    }
+    return view('admin.information.index', [
+        'page_title' => 'Information',
+        'information' => $information,
+    ]);
+}
+    
 
     /**
      * Show the form for creating a new resource.
@@ -70,7 +67,6 @@ class InformationController extends Controller
     $image = $request->file('image');
     $file = $request->file('file');
     $context = $request->input('title');
-
 
     // Validate the inputs
     $validator = Validator::make([

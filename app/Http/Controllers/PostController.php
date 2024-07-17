@@ -101,15 +101,11 @@ class PostController extends Controller
     }catch(\Exception){
         return redirect()->back()->with('error', 'Failed to update posts. Please try again.');
     }
-
-
-
     }
 
     public function destroy($id)
     {
         try{
-
 
         $post = Post::find($id);
         if($post->delete()){
@@ -120,8 +116,6 @@ class PostController extends Controller
     }catch(\Exception){
         return redirect()->back()->with('error', 'Failed to delete posts. Please try again.');
     }
-
-
     }
 
     public function uploadImage(Request $request)

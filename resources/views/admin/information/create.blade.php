@@ -46,13 +46,12 @@
             <option value="other">Others</option>
         </select> --}}
 
-        <select name="context" id="">
+        <select name="type" id="">
             <option value="0" disabled selected>--Select Type --</option>
             @foreach ($context as $contexts )
                 <option value="{{ $contexts->id }}">{{ $contexts->title }}</option>
             @endforeach
         </select>
-
 
         <div class="card-body">
             <div class="form-group">
@@ -102,3 +101,13 @@
 
 
   @stop
+
+
+
+
+
+
+
+
+
+
