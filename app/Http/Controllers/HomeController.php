@@ -87,6 +87,7 @@ class HomeController extends Controller
         
         // Fetch breaking news notices
         $breakingNews = Information::where('type', 1)->latest()->get();
+        $contexts = Context::with('getInformationsByType')->get();
 
         return [
             'coverimages' => $coverimages,
@@ -109,18 +110,16 @@ class HomeController extends Controller
             'noticestitle' => $latestNotice ? $latestNotice->title : null, // Update title with the latest notice
             'visitorCount' => $visitorCount,
             'breakingNews' => $breakingNews, // Add breaking news to the data
+            'contexts' => $contexts,
         ];
     }
 
     // Index method
     public function index(Request $req)
     {
-        $data = $this->fetchCommonData($req);
-
+          $data = $this->fetchCommonData($req);
         return view('portal.index', $data);
     }
-
-    
 
     // Other page method example
     public function otherPage(Request $req)
@@ -139,6 +138,4 @@ class HomeController extends Controller
 
         return view('portal.faq', compact('faqs') + $data);
     }
-
-    
 }

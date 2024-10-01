@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Models\Visitor;
-use App\Models\Informations;
+use App\Models\Information; // Ensure you use the correct model name for breaking news
 use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
@@ -30,9 +30,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        Schema::DefaultStringLength(121);
+        Schema::defaultStringLength(121);
         Paginator::useBootstrap();
-        // Share visitor count with all views
+        
+        // Share common data with all views
         View::composer('*', function ($view) {
             $ipAddress = request()->ip();
             $today = Carbon::today();
@@ -50,9 +51,12 @@ class AppServiceProvider extends ServiceProvider
             // Get the total visitor count
             $visitorCount = Visitor::count();
 
-            // Share $visitorCount variable with all views
-            $view->with('visitorCount', $visitorCount);
+            // Fetch breaking news notices
+            $breakingNews = Information::where('type', 1)->latest()->get();
+
+            // Share variables with all views
+            $view->with('visitorCount', $visitorCount)
+                 ->with('breakingNews', $breakingNews);
         });
-    
     }
-} 
+}

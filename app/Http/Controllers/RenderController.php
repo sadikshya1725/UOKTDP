@@ -38,7 +38,7 @@ class RenderController extends Controller
 
         $notices = [];
         if ($noticestitle) {
-            $notices = $noticestitle->get_informations()->latest()->take(10)->get();
+            $notices = $noticestitle->getInformationsByType()->latest()->take(10)->get();
         }
 
         $contextnav = Context::all();
@@ -56,7 +56,7 @@ class RenderController extends Controller
 
         $notices = [];
         if ($noticestitle) {
-            $notices = $noticestitle->get_informations()->latest()->take(10)->get();
+            $notices = $noticestitle->getInformationsByType()->latest()->take(10)->get();
         }
 
         $contextnav = Context::all();
@@ -74,7 +74,7 @@ class RenderController extends Controller
 
         $notices = [];
         if ($noticestitle) {
-            $notices = $noticestitle->get_informations()->latest()->take(10)->get();
+            $notices = $noticestitle->getInformationsByType()->latest()->take(10)->get();
         }
 
         $orgchart = Orgchart::first();
@@ -92,7 +92,7 @@ class RenderController extends Controller
 
         $notices = [];
         if ($noticestitle) {
-            $notices = $noticestitle->get_informations()->latest()->take(10)->get();
+            $notices = $noticestitle->getInformationsByType()->latest()->take(10)->get();
         }
 
         $contextnav = Context::all();
@@ -110,7 +110,7 @@ class RenderController extends Controller
 
         $notices = [];
         if ($noticestitle) {
-            $notices = $noticestitle->get_informations()->latest()->take(10)->get();
+            $notices = $noticestitle->getInformationsByType()->latest()->take(10)->get();
         }
 
         $contextnav = Context::all();
@@ -128,7 +128,7 @@ class RenderController extends Controller
 
         $notices = [];
         if ($noticestitle) {
-            $notices = $noticestitle->get_informations()->latest()->take(10)->get();
+            $notices = $noticestitle->getInformationsByType()->latest()->take(10)->get();
         }
 
         $contextnav = Context::all();
@@ -146,7 +146,7 @@ class RenderController extends Controller
 
         $notices = [];
         if ($noticestitle) {
-            $notices = $noticestitle->get_informations()->latest()->take(10)->get();
+            $notices = $noticestitle->getInformationsByType()->latest()->take(10)->get();
         }
 
         $contextnav = Context::all();
@@ -158,7 +158,7 @@ class RenderController extends Controller
     public function singleinformation_page($contextId)
     {
         $context = Context::findOrFail($contextId);
-        $informations = $context->get_informations()->latest()->get();
+        $informations = $context->getInformationsByType()->latest()->get();
 
         $contextnav = Context::all();
         $sitesetting = SiteSetting::first();
@@ -167,7 +167,7 @@ class RenderController extends Controller
 
         $notices = [];
         if ($noticestitle) {
-            $notices = $noticestitle->get_informations()->latest()->take(10)->get();
+            $notices = $noticestitle->getInformationsByType()->latest()->take(10)->get();
         }
 
         $breakingNews = $this->getBreakingNews();

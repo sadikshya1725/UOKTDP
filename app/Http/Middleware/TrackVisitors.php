@@ -4,15 +4,17 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use App\Models\Visitor; 
+use App\Models\Visitor;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Hash;
 
 class TrackVisitors
 {
     public function handle(Request $request, Closure $next)
     {
         $ipAddress = $request->ip();
-        $userAgent = $request->header('User-Agent'); 
+        $userAgent = Hash::make($request->header('User-Agent'));
+
         $now = Carbon::now();
 
         // Check if the IP address has already been recorded today

@@ -303,6 +303,7 @@ Route::get('videos', [App\Http\Controllers\RenderController::class, 'render_vide
 
 Route::get('contact_page', [App\Http\Controllers\RenderController::class, 'contact_page'])->name('Contact');
 Route::get('information_page/{id}', [App\Http\Controllers\RenderController::class, 'singleinformation_page'])->name('information_page');
+Route::get('context/{id}', [RenderController::class, 'singleinformation_page'])->name('context.information_page');
 
 
 Route::get('/admin/faqs', [FaqController::class, 'index'])->name('admin.faqs.index');

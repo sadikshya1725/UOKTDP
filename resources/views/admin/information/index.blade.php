@@ -20,60 +20,45 @@
                 </div><!-- /.col -->
             </div><!-- /.row -->
 
-<div class="table-responsive">
-    <table class="table table-bordered table-hover table-responsive">
-        <thead>
-            <tr>
-              <th>S.N.</th>
-                <th>Type</th>
-                <th>Title</th>
-                {{-- <th>Slug</th> --}}
-
-                <th>Docs URl</th>
-                <th>Image</th>
-                <th>File</th>
-                <th>Action</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($information as $info)
-                <tr data-widget="expandable-table" aria-expanded="false">
-                  <td>{{ $loop->iteration }}</td>
-                  @foreach ($info->get_contexts as $context )
-                  <td>{{  $context->title  }}</td>
-                  @endforeach
-                    <td>{{ $info->title ?? '' }}</td>
-                    {{-- <td>{{ $info->slug ?? '' }}</td> --}}
-                    <td width="200px">{{ $info->gdocs ?? '' }}</td>
-                    <td><img id="preview" src="{{ asset( $info->image) }}"
-                      style="width: 100px; height:100px; object-fit:cover;" /></td>
-                    <td><iframe src="{{ asset($info->file) }}" title="" style="width: 100px; height:100px;"></iframe>
-
-                    <td>
-
-                        {{-- <a href="edit/{{ $info->id }}"> --}}
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover table-responsive">
+                  <thead>
+                      <tr>
+                          <th>S.N.</th>
+                          <th>Type</th>
+                          <th>Title</th>
+                          <th>Docs URI</th>
+                          <th>Image</th>
+                          <th>File</th>
+                          <th>Action</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($information as $info)
+                    <tr data-widget="expandable-table" aria-expanded="false">
+                        <td>{{ $info->id }}</td>
+                        <td>{{ $info->contextType->title ?? 'Unknown' }}</td> <!-- Handle null case here -->
+                        <td>{{ $info->title ?? '' }}</td>
+                        <td width="200px">{{ $info->gdocs ?? '' }}</td>
+                        <td><img src="{{ asset($info->image) }}" style="width: 100px; height:100px; object-fit:cover;" /></td>
+                        <td><iframe src="{{ asset($info->file) }}" style="width: 100px; height:100px;"></iframe></td>
+                        <td>
                             <div style="display: flex; flex-direction:row;">
-                              <button type="button" class="btn-warning button-size" data-bs-toggle="modal" data-bs-target="#edit{{ $info->id }}">
-                                Update
-                              </button>
-                        {{-- </a> --}}
-
-                        {{-- <a href="{{ url('admin/information/destroy/'.$info->id) }}"> --}}
-                            {{-- <button type="button" class="btn-block btn-danger btn-sm" data-toggle="modal"
-                                data-target="#modal-default" style="width:auto;"
-                                onclick="replaceLinkFunction">Delete</button> --}}
+                                <button type="button" class="btn-warning button-size" data-bs-toggle="modal" data-bs-target="#edit{{ $info->id }}">
+                                    Update
+                                </button>
                                 <button type="button" class="btn-danger button-size" data-bs-toggle="modal" data-bs-target="#delete{{ $info->id }}">
                                     Delete
-                                  </button>
-
-
-                        {{-- </a> --}}
-
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
+                
+                
+                  </tbody>
+              </table>
+          </div>
         @foreach ($information as $info )
 
         <div class="modal fade" id="delete{{ $info->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -124,9 +109,9 @@
         @endforeach
     </table>
 
-    <div class="d-flex justify-content-center">
+    {{-- <div class="d-flex justify-content-center">
       {!! $information->links() !!}
-    </div>
+    </div> --}}
 
 
 

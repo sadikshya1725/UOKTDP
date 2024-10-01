@@ -4,16 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use App\Models\Information;
 
 class Context extends Model
 {
     use HasFactory;
 
     protected $table = 'contexts';
+    protected $fillable = ['title'];
 
-    public function get_informations(): BelongsToMany
+    // Method to fetch information based on the 'type' column in Information table
+    public function getInformationsByType()
     {
-        return $this->belongsToMany(Information::class, 'informations_contexts');
+        return $this->hasMany(Information::class, 'type', 'id'); // Assuming 'type' is a foreign key to context ID
     }
+    
 }
+

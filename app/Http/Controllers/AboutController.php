@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Exception;
 use Carbon\Carbon;
 use App\Models\About;
+
 use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -199,4 +200,7 @@ class AboutController extends Controller
             // }
 
     }
+   
+  
+
 }

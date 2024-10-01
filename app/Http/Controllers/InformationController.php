@@ -26,14 +26,15 @@ class InformationController extends Controller
         // $tenders = Information::whereType('tender')->latest()->get()->take(5);
 
         public function index()
-{
-    $information = Information::with('get_contexts')->latest()->paginate(20);
-
-    return view('admin.information.index', [
-        'page_title' => 'Information',
-        'information' => $information,
-    ]);
-}
+        {
+            $information = Information::with('contextType')->orderBy('created_at', 'desc')->get();
+        
+            return view('admin.information.index', [
+                'page_title' => 'Information',
+                'information' => $information,
+            ]);
+        }
+        
     
 
     /**

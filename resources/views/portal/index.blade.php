@@ -50,20 +50,31 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="active-tabs">
+                        {{-- Render tabs based on context --}}
                         @foreach ($context as $key => $value)
-                        <input type="radio" name="active_tabs" id="btn-{{ $key + 1 }}" class="btn-{{ $key + 1 }}" {{ $loop->first ? 'checked' : '' }}>
-                        <label for="btn-{{ $key + 1 }}" class="btn"><i class="fa-solid fa-file-pdf"></i> {{ __($value->title) }}</label>
-                    @endforeach
-
+                            <input type="radio" name="active_tabs" id="btn-{{ $key + 1 }}" class="btn-{{ $key + 1 }}" {{ $loop->first ? 'checked' : '' }}>
+                            <label for="btn-{{ $key + 1 }}" class="btn">
+                                <i class="fa-solid fa-file-pdf"></i> {{ __($value->title) }}
+                            </label>
+                        @endforeach
+    
                         <div class="tabs-container">
+                            {{-- Render tab content based on context --}}
                             @foreach ($context as $key => $value)
                                 <div class="tab-{{ $key + 1 }}">
-                                    @if (count($value->get_informations) > 0)
-                                        @foreach ($value->get_informations as $information)
+                                    {{-- Use getInformationsByType() method to fetch data directly from the Information table --}}
+                                    @php
+                                        // Fetch the informations by calling get() on the relationship method
+                                        $informations = $value->getInformationsByType()->latest()->get();
+                                    @endphp
+    
+                                    @if ($informations->isNotEmpty())
+                                        @foreach ($informations as $information)
                                             <div class="row mt-3 mb-3">
                                                 <div class="col-md-3 col-3">
+                                                    {{-- Check if the information has an image --}}
                                                     @if (isset($information->image))
-                                                        <img class="square_image" src="{{ asset($information->image) }}" alt="Documents Image">
+                                                        <img class="square_image" src="{{ asset($information->image) }}" alt="Document Image">
                                                     @else
                                                         <img class="square_image" src="{{ url('img/logo.png') }}" alt="{{ $information->title }}">
                                                     @endif
@@ -73,12 +84,14 @@
                                                 </div>
                                                 <div class="col-md-3 col-1">
                                                     <p class="font_icons">
+                                                        {{-- Download Link --}}
                                                         <a class="nodecoration" target="_blank" href="{{ asset($information->file) }}" download>
                                                             <span class="font_down">
                                                                 <i class="fas fa-download"></i>
                                                             </span>
                                                         </a>
                                                         <br><br>
+                                                        {{-- View Link --}}
                                                         <a class="nodecoration" href="{{ asset($information->file) }}" target="_blank">
                                                             <span class="font_eye">
                                                                 <i class="fas fa-eye"></i>
@@ -96,13 +109,16 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="col-md-4">
+                    {{-- Embedded Facebook Page --}}
                     <iframe src="{{ $sitesetting->face_page }}" width="100%" height="600" style="border:none; margin-left:5px;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
             </div>
         </div>
     </section>
+    
+    
 
     <section class="photo-feature">
         <div class="container">
