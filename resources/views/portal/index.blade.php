@@ -156,12 +156,13 @@
 
     <section class="videos_sec">
         <div class="container">
-            <h1 class="cat_title">{{ __('Video Gallery') }}</h2>
+            <h1 class="cat_title">{{ __('Video Gallery') }}</h1>
             <div class="row">
                 @foreach ($videos as $vid)
                     <div class="col-md-4">
                         <div class="card video_card mt-2 mb-2">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $vid->vid_url }}" frameborder="0" allowfullscreen=""></iframe>
+                            <!-- Update the src attribute to use $vid->vid_url instead of $videos->vid_url -->
+                            <iframe src="{{ $vid->vid_url }}" title="{{ $vid->vid_desc }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="card-body text-center">
                                 <span class="vid_desc">{{ $vid->vid_desc }}</span><br>
                             </div>
@@ -171,6 +172,7 @@
             </div>
         </div>
     </section>
+    
 
     @include('portal.includes.land_contact')
 @endsection

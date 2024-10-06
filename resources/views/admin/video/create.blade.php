@@ -1,85 +1,81 @@
 @extends('admin.layouts.master')
 
-
 @section('content')
     <!-- Content Wrapper. Contains page content -->
+    <div class="row mb-2">
+        <div class="col-sm-6">
+            <h1 class="m-0">{{ $page_title }}</h1>
+            <a href="{{ url('admin') }}">
+                <button class="btn btn-primary btn-sm">
+                    <i class="fa fa-arrow-left"></i> Back
+                </button>
+            </a>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a></li>
+                <li class="breadcrumb-item active">Dashboard v1</li>
+            </ol>
+        </div><!-- /.col -->
+    </div><!-- /.row -->
 
-    <!-- Content Header (Page header) -->
+    <!-- Display Session Messages -->
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
 
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0">{{ $page_title }}</h1>
-                    <a href="{{ url('admin') }}"><button class="btn-primary btn-sm"><i class="fa fa-arrow-left"></i>
-                            Back</button></a>
-                </div><!-- /.col -->
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard v1</li>
-                    </ol>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
+    @if (session('successMessage'))
+        <div class="alert alert-success">
+            {{ session('successMessage') }}
+        </div>
+    @endif
 
-
-        <form id="quickForm"  method="POST" action="{{ route('Admin.Videos.Store') }}"
-        enctype="multipart/form-data">
+    <!-- Video Creation Form -->
+    <form id="quickForm" method="POST" action="{{ route('Admin.Videos.Store') }}">
         @csrf
         <div class="card-body">
-
+            <!-- Video Description Field -->
             <div class="form-group">
-                <label for="exampleInputEmail1">Video Description</label>
-                <input type="text" name="vid_desc" class="form-control" placeholder="Title" required>
-            </div>
-
-            <div class="form-group">
-                <label for="exampleInputEmail1">Video URL</label>
-                <input type="text" name="vid_url" class="form-control" placeholder="URL"
+                <label for="vid_desc">Video Description</label>
+                <input 
+                    type="text" 
+                    name="vid_desc" 
+                    id="vid_desc" 
+                    class="form-control @error('vid_desc') is-invalid @enderror" 
+                    placeholder="Description" 
+                    value="{{ old('vid_desc') }}" 
                     required>
+                @error('vid_desc')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>
-
-
-
+            
+            <!-- Video URL Field -->
+            <div class="form-group">
+                <label for="vid_url">Video URL</label>
+                <input 
+                    type="text" 
+                    name="vid_url" 
+                    id="vid_url" 
+                    class="form-control @error('vid_url') is-invalid @enderror" 
+                    placeholder="YouTube or Vimeo URL" 
+                    value="{{ old('vid_url') }}" 
+                    required>
+                
+                @error('vid_url')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-            <button type="submit" class="btn-primary">Create Link</button>
+            <button type="submit" class="btn btn-primary">Create Video</button>
         </div>
     </form>
-
-      @if (isset($links) && is_array($links))
-
-
-<div class="p-4">
-
-      @foreach ($links as $link )
-
-     <a href="{{ $link[1] }}">
-        <button class="btn-primary">{{ $link[0] }}</button>
-      </a>
-      @endforeach
-    </div>
-
-    @endif
-        <!-- /.row -->
-        <!-- Main row -->
-
-    <!-- /.content -->
-
-
-    <script>
-        const previewImage = e => {
-            const reader = new FileReader();
-            reader.readAsDataURL(e.target.files[0]);
-            reader.onload = () => {
-                const preview = document.getElementById('preview');
-                preview.src = reader.result;
-            };
-        };
-    </script>
-
-
-
-
-
-
-  @stop
+@stop

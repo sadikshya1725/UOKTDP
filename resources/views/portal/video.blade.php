@@ -15,7 +15,7 @@
             @foreach ($videos as $video)
             <div class="col-md-4">
                 <div class="card video_card mt-2 mb-2">
-                    <iframe src="https://www.youtube.com/embed/{{ $video->vid_url }}" title="{{ $video->vid_desc }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="{{ $video->vid_url }}" title="{{ $video->vid_desc }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="card-body text-center">
                    
                         <span class="vid_desc">{{ $video->vid_desc }}</span><br>
